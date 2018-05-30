@@ -1,0 +1,14 @@
+prefix=/home/aluesink/Documents/Workflow_Course11/.snakemake/conda/c2e89573
+exec_prefix=/home/aluesink/Documents/Workflow_Course11/.snakemake/conda/c2e89573
+libdir=/home/aluesink/Documents/Workflow_Course11/.snakemake/conda/c2e89573/lib
+includedir=/home/aluesink/Documents/Workflow_Course11/.snakemake/conda/c2e89573/include
+
+Name: FreeType 2
+URL: http://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 20.0.14
+Requires:
+Requires.private: 
+Libs: -L${libdir} -lfreetype
+Libs.private: -lz -L/home/aluesink/Documents/Workflow_Course11/.snakemake/conda/c2e89573/lib -lpng16 -lm -lz -lm
+Cflags: -I${includedir}/freetype2

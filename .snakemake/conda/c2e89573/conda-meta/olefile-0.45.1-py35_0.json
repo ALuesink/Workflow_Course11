@@ -1,0 +1,77 @@
+{
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.5,<3.6.0a0"
+  ],
+  "extracted_package_dir": "/home/aluesink/miniconda3/pkgs/olefile-0.45.1-py35_0",
+  "features": "",
+  "files": [
+    "lib/python3.5/site-packages/olefile-0.45.1-py3.5.egg-info",
+    "lib/python3.5/site-packages/olefile/__init__.py",
+    "lib/python3.5/site-packages/olefile/__pycache__/__init__.cpython-35.pyc",
+    "lib/python3.5/site-packages/olefile/__pycache__/olefile.cpython-35.pyc",
+    "lib/python3.5/site-packages/olefile/olefile.py"
+  ],
+  "fn": "olefile-0.45.1-py35_0.tar.bz2",
+  "license": "BSD License 2-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/home/aluesink/miniconda3/pkgs/olefile-0.45.1-py35_0",
+    "type": 1
+  },
+  "md5": "36afe7c368c2e61759312d653292d467",
+  "name": "olefile",
+  "package_tarball_full_path": "/home/aluesink/miniconda3/pkgs/olefile-0.45.1-py35_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.5/site-packages/olefile-0.45.1-py3.5.egg-info",
+        "path_type": "hardlink",
+        "sha256": "b9bfd18902dfd65403c1a644152e5b4214708c0784f1f56ff25294acec78ce79",
+        "sha256_in_prefix": "b9bfd18902dfd65403c1a644152e5b4214708c0784f1f56ff25294acec78ce79",
+        "size_in_bytes": 10605
+      },
+      {
+        "_path": "lib/python3.5/site-packages/olefile/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "5e81aec95ac09c993ad53fcfd93b3a6f67f1d1ff0bfee49214cabcfe51f0c17a",
+        "sha256_in_prefix": "5e81aec95ac09c993ad53fcfd93b3a6f67f1d1ff0bfee49214cabcfe51f0c17a",
+        "size_in_bytes": 995
+      },
+      {
+        "_path": "lib/python3.5/site-packages/olefile/__pycache__/__init__.cpython-35.pyc",
+        "path_type": "hardlink",
+        "sha256": "45e0205314421214c09f827b8f6dd27b5ad7a2120bb8b348cf610e6ebdb686ef",
+        "sha256_in_prefix": "45e0205314421214c09f827b8f6dd27b5ad7a2120bb8b348cf610e6ebdb686ef",
+        "size_in_bytes": 1114
+      },
+      {
+        "_path": "lib/python3.5/site-packages/olefile/__pycache__/olefile.cpython-35.pyc",
+        "path_type": "hardlink",
+        "sha256": "5c30a72748353582dc8c79ec3a88c0075a7a3d8a92c5fdd074a91450d9a1c9a4",
+        "sha256_in_prefix": "5c30a72748353582dc8c79ec3a88c0075a7a3d8a92c5fdd074a91450d9a1c9a4",
+        "size_in_bytes": 59059
+      },
+      {
+        "_path": "lib/python3.5/site-packages/olefile/olefile.py",
+        "path_type": "hardlink",
+        "sha256": "feeeda9c8d82b2653c33c82c312ebd87c074208b39a2b98f710f5103108fddca",
+        "sha256_in_prefix": "feeeda9c8d82b2653c33c82c312ebd87c074208b39a2b98f710f5103108fddca",
+        "size_in_bytes": 104859
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "linux",
+  "requested_spec": "None",
+  "size": 48389,
+  "subdir": "linux-64",
+  "timestamp": 1517331233527,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/olefile-0.45.1-py35_0.tar.bz2",
+  "version": "0.45.1"
+}

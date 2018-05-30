@@ -1,0 +1,100 @@
+{
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.5,<3.6.0a0"
+  ],
+  "extracted_package_dir": "/home/aluesink/miniconda3/pkgs/certifi-2018.4.16-py35_0",
+  "features": "",
+  "files": [
+    "lib/python3.5/site-packages/certifi-2018.04.16-py3.5.egg-info",
+    "lib/python3.5/site-packages/certifi/__init__.py",
+    "lib/python3.5/site-packages/certifi/__main__.py",
+    "lib/python3.5/site-packages/certifi/__pycache__/__init__.cpython-35.pyc",
+    "lib/python3.5/site-packages/certifi/__pycache__/__main__.cpython-35.pyc",
+    "lib/python3.5/site-packages/certifi/__pycache__/core.cpython-35.pyc",
+    "lib/python3.5/site-packages/certifi/cacert.pem",
+    "lib/python3.5/site-packages/certifi/core.py"
+  ],
+  "fn": "certifi-2018.4.16-py35_0.tar.bz2",
+  "license": "ISC",
+  "link": {
+    "source": "/home/aluesink/miniconda3/pkgs/certifi-2018.4.16-py35_0",
+    "type": 1
+  },
+  "md5": "eb9f69adf79ec5b7437df61b7aebb790",
+  "name": "certifi",
+  "package_tarball_full_path": "/home/aluesink/miniconda3/pkgs/certifi-2018.4.16-py35_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.5/site-packages/certifi-2018.04.16-py3.5.egg-info",
+        "path_type": "hardlink",
+        "sha256": "2474bc18a4897200066fcdcaae1b27ee1eb1049eb6504e8b6ceb9245c3114746",
+        "sha256_in_prefix": "2474bc18a4897200066fcdcaae1b27ee1eb1049eb6504e8b6ceb9245c3114746",
+        "size_in_bytes": 2950
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "2870e542d4104d198e1b44c98b5d99204e565aadad6073396b1df4117e94274e",
+        "sha256_in_prefix": "2870e542d4104d198e1b44c98b5d99204e565aadad6073396b1df4117e94274e",
+        "size_in_bytes": 63
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "162398b75165b6cb7bc24f4345ae860a806bf2a054c65350bbf30a25fd3813ab",
+        "sha256_in_prefix": "162398b75165b6cb7bc24f4345ae860a806bf2a054c65350bbf30a25fd3813ab",
+        "size_in_bytes": 41
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/__pycache__/__init__.cpython-35.pyc",
+        "path_type": "hardlink",
+        "sha256": "e1ae96260644f2e0e0e862c606aae28272bba5e346a4a9619bcd933d89532bef",
+        "sha256_in_prefix": "e1ae96260644f2e0e0e862c606aae28272bba5e346a4a9619bcd933d89532bef",
+        "size_in_bytes": 223
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/__pycache__/__main__.cpython-35.pyc",
+        "path_type": "hardlink",
+        "sha256": "369444a843ec4f8d73eb60a27db679de59f649c2fdc275952d349b71a624b3f4",
+        "sha256_in_prefix": "369444a843ec4f8d73eb60a27db679de59f649c2fdc275952d349b71a624b3f4",
+        "size_in_bytes": 193
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/__pycache__/core.cpython-35.pyc",
+        "path_type": "hardlink",
+        "sha256": "417adb6f18986bd8ae28e46821c38fe2fd9e7faf10c19c40f635237304cda770",
+        "sha256_in_prefix": "417adb6f18986bd8ae28e46821c38fe2fd9e7faf10c19c40f635237304cda770",
+        "size_in_bytes": 1203
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/cacert.pem",
+        "path_type": "hardlink",
+        "sha256": "d25c0c2db7e2e2e9b30dd3a674b31dacd920671c3ee72e8f084d743eb9c9cbe9",
+        "sha256_in_prefix": "d25c0c2db7e2e2e9b30dd3a674b31dacd920671c3ee72e8f084d743eb9c9cbe9",
+        "size_in_bytes": 268839
+      },
+      {
+        "_path": "lib/python3.5/site-packages/certifi/core.py",
+        "path_type": "hardlink",
+        "sha256": "c4f403746fec8b2e40ec17ea1966bb44985c03ad715c4a8f892af0f463728471",
+        "sha256_in_prefix": "c4f403746fec8b2e40ec17ea1966bb44985c03ad715c4a8f892af0f463728471",
+        "size_in_bytes": 836
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "linux",
+  "requested_spec": "None",
+  "size": 146133,
+  "subdir": "linux-64",
+  "timestamp": 1524178040705,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/certifi-2018.4.16-py35_0.tar.bz2",
+  "version": "2018.4.16"
+}

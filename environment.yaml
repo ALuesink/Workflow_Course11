@@ -7,3 +7,4 @@ dependencies:
  - python=3.5.1
  - snakemake=3.11.0
  - pyyaml=3.11
+ - biopython

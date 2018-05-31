@@ -11,7 +11,5 @@ rule get_PMIDs:
 		"Data/Oefen_RNA-Seq-IDs.txt"
 	output:
 		"Data/Oefen_PMIDs.txt"
-	conda:
-		"envs/biopython.yaml"
 	shell:
 		"python Scripts/Get_PMIDs.py {input} {output}"

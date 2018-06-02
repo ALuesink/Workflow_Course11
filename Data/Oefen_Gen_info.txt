@@ -1,3 +1,4 @@
+Locus_tag 	 Gen_naam 	 Gen_accessie 	 Genoom 	 Gen_start 	 Gen_stop 	 Lijst_PMIDs 
 lp_0001	chromosomal replication initiation protein DnaA	YP_004888094	NC_004567	0	1367	['17115453', '22156394']
 lp_0002	DNA-directed DNA polymerase III subunit beta	YP_004888095	NC_004567	1545	2684	['17115453', '22156394']
 lp_0004	hypothetical protein	YP_004888096	NC_004567	3209	3442	['17115453', '22156394']

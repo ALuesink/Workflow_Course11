@@ -23,7 +23,7 @@ def PMID_connection(list_PMIDs, file):
     Entrez.email = "mail@email.com"
 
     with open(file, "w+") as outfile:
-        outfile.write("Locus_tag \t Gen_naam \t Gen_accessie \t Genoom \t Gen_start \t Gen_stop \t Lijst_PMIDs \n"
+        outfile.write("Locus_tag \t Gen_naam \t Gen_accessie \t Genoom \t Gen_start \t Gen_stop \t Lijst_PMIDs \n")
         for PMID in list_PMIDs:
             id = PMID[1]
             locus_tag = PMID[0]

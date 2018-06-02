@@ -21,3 +21,11 @@ rule gene_info:
 		"Data/Oefen_Gen_info.txt"
 	shell:
 		"python Scripts/Gene_info.py {input} {output}"
+
+rule seq_gc:
+	input:
+		"Data/Oefen_Gen_info.txt"
+	output:
+		"Data/Oefen_Seq_GC.txt"
+	shell:
+		"python Scripts/Gene_info.py {input} {output}"

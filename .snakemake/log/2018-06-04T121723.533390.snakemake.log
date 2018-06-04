@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 36 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Missing input files for rule report:
+Data/Oefen_RNA-Seq-IDs.txtData/Oefen_PMIDs.txtData/Oefen_Gen_info.txtData/Oefen_Seq_GC.txt

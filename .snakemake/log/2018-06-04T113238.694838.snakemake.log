@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	open_file
+	1
+
+rule open_file:
+    input: Data/Oefen_RNA-Seq-counts.txt
+    output: Data/Oefen_RNA-Seq-IDs.txt
+    jobid: 0
+
+    Error in rule open_file:
+        jobid: 0
+        output: Data/Oefen_RNA-Seq-IDs.txt
+
+RuleException:
+CalledProcessError in line 7 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Command ' set -euo pipefail;  python Scripts/Open_Bestand.py ' returned non-zero exit status 1.
+  File "/home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile", line 7, in __rule_open_file
+  File "/home/sanne/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-04T113238.694838.snakemake.log

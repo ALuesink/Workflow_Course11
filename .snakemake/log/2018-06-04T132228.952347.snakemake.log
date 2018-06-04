@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	gene_info
+	1	report
+	1	seq_gc
+	3
+
+rule gene_info:
+    input: Data/Oefen_PMIDs.txt
+    output: Data/Oefen_Gen_info.txt
+    jobid: 2
+
+Finished job 2.
+1 of 3 steps (33%) done
+
+rule seq_gc:
+    input: Data/Oefen_Gen_info.txt
+    output: Data/Oefen_Seq_GC.txt
+    jobid: 1
+
+    Error in rule seq_gc:
+        jobid: 1
+        output: Data/Oefen_Seq_GC.txt
+
+RuleException:
+CalledProcessError in line 34 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Command ' set -euo pipefail;  python Scripts/Gene_info.py Data/Oefen_Gen_info.txt Data/Oefen_Seq_GC.txt ' returned non-zero exit status 1.
+  File "/home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile", line 34, in __rule_seq_gc
+  File "/home/sanne/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job seq_gc since they might be corrupted:
+Data/Oefen_Seq_GC.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-04T132228.952347.snakemake.log

@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	gene_info
+	1	report
+	1	seq_gc
+	3
+
+rule gene_info:
+    input: Data/Oefen_PMIDs.txt
+    output: Data/Oefen_Gen_info.txt
+    jobid: 3
+
+    Error in rule gene_info:
+        jobid: 3
+        output: Data/Oefen_Gen_info.txt
+
+RuleException:
+CalledProcessError in line 26 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Command ' set -euo pipefail;  python Scripts/Gene_info.py Data/Oefen_PMIDs.txt Data/Oefen_Gen_info.txt ' returned non-zero exit status 1.
+  File "/home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile", line 26, in __rule_gene_info
+  File "/home/sanne/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-04T132156.982457.snakemake.log

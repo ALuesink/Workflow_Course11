@@ -13,13 +13,9 @@ def openfile():
         lines.append(regel)
         ids.append(id)
 
-    # file = open("Data/RNA-Seq-IDs.txt", "w+")
-    # for id in ids:
-    #     file.write(id + "\n")
-    # file.close()
-
     with open("Data/Oefen_RNA-Seq-IDs.txt", "w+") as file:
         for id in ids:
             file.write(id + '\n')
+
 
 main()

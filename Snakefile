@@ -1,3 +1,6 @@
+#rule all:
+#	input: "report.html"
+
 rule open_file:
 	input:
 		"Data/Oefen_RNA-Seq-counts.txt"
@@ -28,4 +31,15 @@ rule seq_gc:
 	output:
 		"Data/Oefen_Seq_GC.txt"
 	shell:
-		"python Scripts/Gene_info.py {input} {output}"
+		"python Scripts/Seq_GC.py {input} {output}"
+
+rule report:
+	input:
+		"Data/Oefen_RNA-Seq-IDs.txt",
+		"Data/Oefen_PMIDs.txt",
+		"Data/Oefen_Gen_info.txt",
+		"Data/Oefen_Seq_GC.txt"
+	output:
+		"report.html"
+	run:
+		"python Scripts/make_report.py"

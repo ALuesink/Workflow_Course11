@@ -1,0 +1,1 @@
+python Scripts/Seq_GC.py Data/Oefen_Gen_info.txt Data/Oefen_Seq_GC.txt

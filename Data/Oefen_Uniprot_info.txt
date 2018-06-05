@@ -1,0 +1,30 @@
+lp_0001 	 C:cytoplasm; F:ATP binding; F:DNA replication origin binding; P:DNA replication initiation; P:regulation of DNA replication; 
+lp_0002 	 C:cytoplasm; C:DNA polymerase III complex; F:DNA binding; P:DNA replication; 
+lp_0004 	 F:RNA binding; 
+lp_0005 	 C:cytoplasm; F:ATP binding; P:DNA repair; P:DNA replication; P:SOS response; 
+lp_0009 	 C:ribosome; F:rRNA binding; F:structural constituent of ribosome; P:translation; 
+lp_0010 	 P:DNA recombination; P:DNA repair; P:DNA replication; 
+lp_0011 	 C:ribosome; F:rRNA binding; F:structural constituent of ribosome; P:translation; 
+lp_0012 	 C:integral component of membrane; F:nucleic acid binding; 
+lp_0013 	 C:ribosome; F:rRNA binding; F:structural constituent of ribosome; P:translation; 
+lp_0014 	 C:primosome complex; F:ATP binding; F:DNA binding; F:DNA helicase activity; 
+lp_0015 	 C:integral component of membrane; P:transmembrane transport; 
+lp_0016 	 C:cytoplasm; F:ATP binding; 
+lp_0017 	 C:cytoplasm; F:NADP binding; 
+lp_0018 	 P:transmembrane transport; 
+lp_0022 	 F:nucleotidyltransferase activity; P:glycogen biosynthetic process; 
+lp_0026 	 F:hydrolase activity; 
+lp_0027 	 F:hydrolase activity; F:magnesium ion binding; P:carbohydrate metabolic process; 
+lp_0036 	 C:intracellular; F:DNA binding; P:phosphorelay signal transduction system; 
+lp_0037 	 C:integral component of membrane; C:intracellular; F:ATP binding; F:phosphorelay sensor kinase activity; 
+lp_0041 	 F:hydrolase activity; 
+lp_0043 	 
+lp_0046 	 C:integral component of membrane; F:DNA binding; 
+lp_0047 	 P:cellular aldehyde metabolic process; 
+lp_0050 	 F:oxidoreductase activity; 
+lp_0052 	 
+lp_0057 	 F:DNA binding; F:DNA binding transcription factor activity; 
+lp_0059 	 F:protein tyrosine phosphatase activity; 
+lp_0060 	 
+lp_0061 	 F:lyase activity; 
+lp_0062 	 F:oxidoreductase activity; 

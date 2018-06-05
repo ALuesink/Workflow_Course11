@@ -1,0 +1,1 @@
+bash Scripts/Uniprot_info.sh args[1] < Data/Oefen_Uniprot_IDs.txt >> Data/Oefen_Uniprot_info.txt

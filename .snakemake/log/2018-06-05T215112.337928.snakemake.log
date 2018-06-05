@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	gene_info
+	1	get_PMIDs
+	1	open_file
+	1	report
+	1	seq_gc
+	5
+
+rule open_file:
+    input: Data/Oefen_RNA-Seq-counts.txt
+    output: Data/Oefen_RNA-Seq-IDs.txt
+    jobid: 2
+
+Finished job 2.
+1 of 5 steps (20%) done
+
+rule get_PMIDs:
+    input: Data/Oefen_RNA-Seq-IDs.txt
+    output: Data/Oefen_PMIDs.txt
+    jobid: 4
+
+Finished job 4.
+2 of 5 steps (40%) done
+
+rule gene_info:
+    input: Data/Oefen_PMIDs.txt
+    output: Data/Oefen_Gen_info.txt
+    jobid: 3
+
+Finished job 3.
+3 of 5 steps (60%) done
+
+rule seq_gc:
+    input: Data/Oefen_Gen_info.txt
+    output: Data/Oefen_Seq_GC.txt
+    jobid: 1
+
+Finished job 1.
+4 of 5 steps (80%) done
+
+rule report:
+    input: Data/Oefen_RNA-Seq-IDs.txt, Data/Oefen_PMIDs.txt, Data/Oefen_Gen_info.txt, Data/Oefen_Seq_GC.txt
+    output: report.html
+    jobid: 0
+
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-05T215112.337928.snakemake.log

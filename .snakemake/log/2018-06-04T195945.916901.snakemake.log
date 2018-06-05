@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	report
+	1
+
+rule report:
+    input: Data/Oefen_RNA-Seq-IDs.txt, Data/Oefen_PMIDs.txt, Data/Oefen_Gen_info.txt, Data/Oefen_Seq_GC.txt
+    output: report.html
+    jobid: 0
+
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-04T195945.916901.snakemake.log

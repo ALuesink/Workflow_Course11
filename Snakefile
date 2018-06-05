@@ -28,4 +28,21 @@ rule seq_gc:
 	output:
 		"Data/Oefen_Seq_GC.txt"
 	shell:
-		"python Scripts/Gene_info.py {input} {output}"
+		"python Scripts/Seq_GC.py {input} {output}"
+
+rule gen_ids:
+	input:
+		"Data/Oefen_PMIDs.txt"
+	output:
+		"Data/Oefen_Gen_IDs.txt",
+		"Data/Oefen_Uniprot_IDs.txt"
+	shell:
+		"python Scripts/Gen_IDs.py {input} {output}"
+
+rule uniprot_info:
+	input:
+		"Data/Oefen_Uniprot_IDs.txt"
+	output:
+		"Data/Oefen_Uniprot_info.txt"
+	shell:
+		"bash Scripts/Uniprot_info.sh args[1] < {input} >> {output}"

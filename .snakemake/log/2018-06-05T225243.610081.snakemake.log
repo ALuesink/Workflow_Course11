@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	gen_ids
+	1	report
+	1	uniprot_info
+	3
+
+rule gen_ids:
+    input: Data/Oefen_PMIDs.txt
+    output: Data/Oefen_Gen_IDs.txt, Data/Oefen_Uniprot_IDs.txt
+    jobid: 2
+
+Finished job 2.
+1 of 3 steps (33%) done
+
+rule uniprot_info:
+    input: Data/Oefen_Uniprot_IDs.txt
+    output: Data/Oefen_Uniprot_info.txt
+    jobid: 3
+
+Terminating processes on user request, this might take some time.
+    Error in rule uniprot_info:
+        jobid: 3
+        output: Data/Oefen_Uniprot_info.txt
+
+RuleException:
+CalledProcessError in line 51 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Command ' set -euo pipefail;  bash Scripts/Uniprot_info.sh args[1] < Data/Oefen_Uniprot_IDs.txt >> Data/Oefen_Uniprot_info.txt ' died with <Signals.SIGINT: 2>.
+  File "/home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile", line 51, in __rule_uniprot_info
+  File "/home/sanne/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job uniprot_info since they might be corrupted:
+Data/Oefen_Uniprot_info.txt
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-05T225243.610081.snakemake.log

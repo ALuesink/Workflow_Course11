@@ -1,5 +1,5 @@
-#rule all:
-#	input: "report.html"
+rule all:
+	input: "report.html"
 
 rule open_file:
 	input:
@@ -55,7 +55,10 @@ rule report:
 		"Data/Oefen_RNA-Seq-IDs.txt",
 		"Data/Oefen_PMIDs.txt",
 		"Data/Oefen_Gen_info.txt",
-		"Data/Oefen_Seq_GC.txt"
+		"Data/Oefen_Seq_GC.txt",
+		"Data/Oefen_Gen_IDs.txt",
+		"Data/Oefen_Uniprot_info.txt",
+		"Data/Oefen_Uniprot_IDs.txt"
 	output:
 		"report.html"
 	run:
@@ -68,17 +71,23 @@ rule report:
 			PMIDs_raw = input[1]
 			Gen_Info_raw = input[2]
 			Seq_GC_raw = input[3]
-			RNA_Seq_IDs, PMIDs, Gen_Info, Seq_GC = read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw)
+
+			Gen_IDs_file_raw = input[4]
+			Uniprot_info_raw = input[5]
+			Uniprot_IDs_raw = input[6]
+			RNA_Seq_IDs, PMIDs, Gen_Info, Seq_GC, Gen_IDs_file, Uniprot_info, Uniprot_IDs = read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw, Gen_IDs_file_raw, Uniprot_info_raw, Uniprot_IDs_raw)
 
 			# Alle benodigde informatie over de genen wordt opgehaald en in
 			# lijsten gezet met de onderstaande functies
 			ids_pm = get_PMIDs(PMIDs)
 			gene_name = get_Gene_Name(Gen_Info)
 			GCper, seq = get_GC_Seq(Seq_GC)
-			# print("ID" + str(ids_pm))
-			# print("gene name" + str(gene_name))
-			# print("GC" + str(GCper))
-			# print("seq" + str(seq))
+			###################################################################
+			#Hier nog shit halen uit Gen_IDs_file, Uniprot_info, Uniprot_IDs
+			#voor in report_data.
+			###################################################################
+
+
 
 			# Hieronder wordt een variabele aangemaakt die de inhoud van het
 			# report bevat. Met de functie make_report wordt het report bestand vervolgens gemaakt
@@ -87,9 +96,9 @@ rule report:
 		 	make_report(report_header, report_data)
 
 
-		# In de functie read_files worden vier bestanden gelezen en in lijsten
+		# In de functie read_files worden *zeven* bestanden gelezen en in lijsten
 		# gezet zodat vervolgens alle belangrijke informatie er eenvoudig uitgehaald kan worden
-		def read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw):
+		def read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw, Gen_IDs_file_raw, Uniprot_info_raw, Uniprot_IDs_raw):
 			PMIDs = []
 			with open(PMIDs_raw, "rb") as f:
 				contents = f.readlines()
@@ -126,7 +135,34 @@ rule report:
 				RNA_Seq_IDs.append(regel)
 			f.close()
 
-			return RNA_Seq_IDs, PMIDs, Gen_Info, Seq_GC
+			Gen_IDs_file = []
+			with open(Gen_IDs_file_raw, "rb") as f:
+				contents = f.readlines()
+			for line in contents:
+				regel = str(line.strip(),"utf-8")
+				regel = regel.split("\t")
+				Gen_IDs_file.append(regel)
+			f.close()
+
+			Uniprot_info = []
+			with open(Uniprot_info_raw, "rb") as f:
+				contents = f.readlines()
+			for line in contents:
+				regel = str(line.strip(),"utf-8")
+				regel = regel.split("\t")
+				Uniprot_info.append(regel)
+			f.close()
+
+			Uniprot_IDs = []
+			with open(Uniprot_IDs_raw, "rb") as f:
+				contents = f.readlines()
+			for line in contents:
+				regel = str(line.strip(),"utf-8")
+				regel = regel.split("\t")
+				Uniprot_IDs.append(regel)
+			f.close()
+
+			return RNA_Seq_IDs, PMIDs, Gen_Info, Seq_GC, Gen_IDs_file, Uniprot_info, Uniprot_IDs
 
 
 		def get_PMIDs(PMIDs):
@@ -164,10 +200,6 @@ rule report:
 		def get_report_data(ids_pm, gene_name, GCper, seq):
 			report_data = []
 			for i in range(len(ids_pm)):
-				# print(ids_pm[i])
-				# print(gene_name[i])
-				# print(GCper[i])
-				# print(seq[i])
 				report_line = "\t\t" + ids_pm[i] + "\t\t" + gene_name[i] + "\t\t" + GCper[i] + "\t\t" + seq[i] + "\n"
 				report_data.append(report_line)
 			return report_data
@@ -188,4 +220,3 @@ rule report:
 
 
 		main()
-

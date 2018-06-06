@@ -1,0 +1,31 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	gen_ids
+	1	gene_info
+	1	get_PMIDs
+	1	report
+	1	seq_gc
+	1	uniprot_info
+	1	visualise
+	7
+
+rule get_PMIDs:
+    input: Data/Oefen_RNA-Seq-IDs.txt
+    output: Data/Oefen_PMIDs.txt
+    jobid: 5
+
+Terminating processes on user request, this might take some time.
+    Error in rule get_PMIDs:
+        jobid: 5
+        output: Data/Oefen_PMIDs.txt
+
+RuleException:
+CalledProcessError in line 18 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Command ' set -euo pipefail;  python Scripts/Get_PMIDs.py Data/Oefen_RNA-Seq-IDs.txt Data/Oefen_PMIDs.txt ' returned non-zero exit status 1.
+  File "/home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile", line 18, in __rule_get_PMIDs
+  File "/home/sanne/anaconda3/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-06T211447.978463.snakemake.log

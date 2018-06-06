@@ -107,7 +107,7 @@ rule report:
 			# report bevat. Met de functie make_report wordt het report bestand vervolgens gemaakt
 			report_header = "Pubmed ID\tUniprot ID\tGene Name\t\t\t\tGC content\tSequence"
 			report_data = get_report_data(ids_pm, uniprot_ids, gene_name, GCper, seq)
-		 	make_report(report_header, report_data, visualise_gc)
+		 	make_report(report_header, report_data)
 
 
 
@@ -228,7 +228,7 @@ rule report:
 
 		# Het maken van het report.html bestand. Hierin is alle significante
 		# informatie over de genen te vinden
-		def make_report(report_header, report_data, visualise_gc):
+		def make_report(report_header, report_data):
 			report("""
 		    	RNA-seq gene report
 
@@ -236,7 +236,6 @@ rule report:
 
 				{report_header}
 		    	{report_data}
-				{visualise_gc}
 
 		    	-------------------------------------------------------------------
 		    	""", output[0], metadata = "Made for you by Michelle Stegeman, Anne Leusink and Sanne Geraets")

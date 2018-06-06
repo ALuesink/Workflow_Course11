@@ -1,0 +1,80 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	gen_ids
+	1	gene_info
+	1	get_PMIDs
+	1	open_file
+	1	report
+	1	seq_gc
+	1	uniprot_info
+	1	visualise
+	8
+
+rule open_file:
+    input: Data/Oefen_RNA-Seq-counts.txt
+    output: Data/Oefen_RNA-Seq-IDs.txt
+    jobid: 6
+
+Finished job 6.
+1 of 8 steps (12%) done
+
+rule get_PMIDs:
+    input: Data/Oefen_RNA-Seq-IDs.txt
+    output: Data/Oefen_PMIDs.txt
+    jobid: 4
+
+Finished job 4.
+2 of 8 steps (25%) done
+
+rule gen_ids:
+    input: Data/Oefen_PMIDs.txt
+    output: Data/Oefen_Gen_IDs.txt, Data/Oefen_Uniprot_IDs.txt
+    jobid: 3
+
+Finished job 3.
+3 of 8 steps (38%) done
+
+rule gene_info:
+    input: Data/Oefen_PMIDs.txt
+    output: Data/Oefen_Gen_info.txt
+    jobid: 1
+
+Finished job 1.
+4 of 8 steps (50%) done
+
+rule seq_gc:
+    input: Data/Oefen_Gen_info.txt
+    output: Data/Oefen_Seq_GC.txt
+    jobid: 5
+
+Finished job 5.
+5 of 8 steps (62%) done
+
+rule visualise:
+    input: Data/Oefen_Seq_GC.txt
+    output: Data/out.png
+    jobid: 2
+
+Finished job 2.
+6 of 8 steps (75%) done
+
+rule uniprot_info:
+    input: Data/Oefen_Uniprot_IDs.txt
+    output: Data/Oefen_Uniprot_info.txt
+    jobid: 7
+
+Finished job 7.
+7 of 8 steps (88%) done
+
+rule report:
+    input: Data/Oefen_RNA-Seq-IDs.txt, Data/Oefen_PMIDs.txt, Data/Oefen_Gen_info.txt, Data/Oefen_Seq_GC.txt, Data/Oefen_Gen_IDs.txt, Data/Oefen_Uniprot_info.txt, Data/Oefen_Uniprot_IDs.txt, Data/out.png
+    output: report.html
+    jobid: 0
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/.snakemake/log/2018-06-06T204259.401629.snakemake.log

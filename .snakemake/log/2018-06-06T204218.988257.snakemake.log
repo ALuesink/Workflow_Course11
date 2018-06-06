@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 61 of /home/sanne/Documents/AAA-Sanne/git/Workflow_Course11/Snakefile:
+Missing input files for rule report:
+Data/Oefen_Uniprot_IDs.txtData/out.png

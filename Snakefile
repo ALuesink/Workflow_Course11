@@ -50,6 +50,20 @@ rule uniprot_info:
 	shell:
 		"bash Scripts/Uniprot_info.sh args[1] < {input} >> {output}"
 
+rule visualise:
+	input:
+		"Data/Oefen_Seq_GC.txt"
+	output:
+		"Data/out.png"
+	shell:
+		"Rscript Scripts/visualise.R {input} {output}"
+
+rule dag_file:
+	output:
+		"Data/dagfile.svg"
+	shell:
+		 "snakemake --dag | dot -Tsvg > {output}"
+
 rule report:
 	input:
 		"Data/Oefen_RNA-Seq-IDs.txt",
@@ -58,7 +72,8 @@ rule report:
 		"Data/Oefen_Seq_GC.txt",
 		"Data/Oefen_Gen_IDs.txt",
 		"Data/Oefen_Uniprot_info.txt",
-		"Data/Oefen_Uniprot_IDs.txt"
+		"Data/Oefen_Uniprot_IDs.txt",
+		"Data/out.png"
 	output:
 		"report.html"
 	run:
@@ -71,10 +86,13 @@ rule report:
 			PMIDs_raw = input[1]
 			Gen_Info_raw = input[2]
 			Seq_GC_raw = input[3]
-
 			Gen_IDs_file_raw = input[4]
 			Uniprot_info_raw = input[5]
 			Uniprot_IDs_raw = input[6]
+			visualise_gc = input[7]
+
+			# In de functie read_files worden *zeven* bestanden gelezen en in lijsten
+			# gezet zodat vervolgens alle belangrijke informatie er eenvoudig uitgehaald kan worden
 			RNA_Seq_IDs, PMIDs, Gen_Info, Seq_GC, Gen_IDs_file, Uniprot_info, Uniprot_IDs = read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw, Gen_IDs_file_raw, Uniprot_info_raw, Uniprot_IDs_raw)
 
 			# Alle benodigde informatie over de genen wordt opgehaald en in
@@ -82,22 +100,17 @@ rule report:
 			ids_pm = get_PMIDs(PMIDs)
 			gene_name = get_Gene_Name(Gen_Info)
 			GCper, seq = get_GC_Seq(Seq_GC)
-			###################################################################
-			#Hier nog shit halen uit Gen_IDs_file, Uniprot_info, Uniprot_IDs
-			#voor in report_data.
-			###################################################################
-
+			uniprot_ids = get_uniprot_ids(Uniprot_IDs)
 
 
 			# Hieronder wordt een variabele aangemaakt die de inhoud van het
 			# report bevat. Met de functie make_report wordt het report bestand vervolgens gemaakt
-			report_header = "Pubmed ID\tGene Name\t\t\t\tGC content\tSequence"
-			report_data = get_report_data(ids_pm, gene_name, GCper, seq)
-		 	make_report(report_header, report_data)
+			report_header = "Pubmed ID\tUniprot ID\tGene Name\t\t\t\tGC content\tSequence"
+			report_data = get_report_data(ids_pm, uniprot_ids, gene_name, GCper, seq)
+		 	make_report(report_header, report_data, visualise_gc)
 
 
-		# In de functie read_files worden *zeven* bestanden gelezen en in lijsten
-		# gezet zodat vervolgens alle belangrijke informatie er eenvoudig uitgehaald kan worden
+
 		def read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw, Gen_IDs_file_raw, Uniprot_info_raw, Uniprot_IDs_raw):
 			PMIDs = []
 			with open(PMIDs_raw, "rb") as f:
@@ -196,17 +209,26 @@ rule report:
 			return GCper, seq
 
 
+		def get_uniprot_ids(Uniprot_IDs):
+			uniprot_ids = []
+			for i in Uniprot_IDs:
+				uniprot_ids.append(i[1])
+				# print(i[1])
+			return uniprot_ids
+
+
 		# Het creëren van de data die in het report komt te staan.
-		def get_report_data(ids_pm, gene_name, GCper, seq):
+		def get_report_data(ids_pm, uniprot_ids, gene_name, GCper, seq):
 			report_data = []
-			for i in range(len(ids_pm)):
-				report_line = "\t\t" + ids_pm[i] + "\t\t" + gene_name[i] + "\t\t" + GCper[i] + "\t\t" + seq[i] + "\n"
+			for i in range(len(uniprot_ids)):
+				report_line = "\t\t" + ids_pm[i] + "\t\t" + "\t\t" + gene_name[i] + "\t\t" + GCper[i] + "\t\t" + seq[i] + "\n"
 				report_data.append(report_line)
 			return report_data
 
+
 		# Het maken van het report.html bestand. Hierin is alle significante
 		# informatie over de genen te vinden
-		def make_report(report_header, report_data):
+		def make_report(report_header, report_data, visualise_gc):
 			report("""
 		    	RNA-seq gene report
 
@@ -214,6 +236,7 @@ rule report:
 
 				{report_header}
 		    	{report_data}
+				{visualise_gc}
 
 		    	-------------------------------------------------------------------
 		    	""", output[0], metadata = "Made for you by Michelle Stegeman, Anne Leusink and Sanne Geraets")

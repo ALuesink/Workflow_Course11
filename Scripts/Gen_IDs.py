@@ -47,8 +47,11 @@ def gen_IDs(list_PMIDs,file1, file2):
                         db_id[db] = list_ids
 
                 outfile.write(locus_tag+"\t"+str(db_id)+"\n")
-                if 'GOA' in db_id:
-                    GO_outfile.write(locus_tag+"\t"+db_id['GOA'][0]+"\n")
+
+                list_uniprot_names = ["UniProtKB/TrEMBL", "UniProtKB/Swiss-Prot"]
+                for naam in list_uniprot_names:
+                    if naam in db_id:
+                        GO_outfile.write(locus_tag+"\t"+db_id[naam][0]+"\n")
 
 
 main()

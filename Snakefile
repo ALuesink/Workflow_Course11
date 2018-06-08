@@ -240,7 +240,7 @@ rule report:
 			for i in range(len(uniprot_ids)):
 
 
-				report_line =  "\n" + "**Gene Name**" + "\t\t" + ids_RNA_Seq[i] + "\n" + "\n" + "**Pubmed ID**" + "\t\t" + ids_pm[i] + "\n"+ "\n" + "**Gene Description**" + "\t\t" + gene_name[i] + "\n"+ "\n" + "**GC percentage**" + "\t" + GCper[i] + "\n"+ "\n" + "**Sequence**" + "\n" + "\n" + seq[i] + "\n"
+				report_line =  "\n" + "**Gene Name:**" + "\t\t" + ids_RNA_Seq[i] + "\n" + "\n" + "**Pubmed ID:**" + "\t\t" + ids_pm[i] + "\n"+ "\n" + "**Gene Description:**" + "\t\t" + gene_name[i] + "\n"+ "\n" + "**GC percentage:**" + "\t" + GCper[i] + "\n"+ "\n" + "**Sequence:**" + "\n" + "\n" + seq[i] + "\n"
 				report_data.append(report_line)
 			return report_data
 		

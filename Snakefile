@@ -58,12 +58,6 @@ rule visualise:
 	shell:
 		"Rscript Scripts/visualise.R {input} {output}"
 
-rule dag_file:
-	output:
-		"Data/dagfile.svg"
-	shell:
-		 "snakemake --dag | dot -Tsvg > {output}"
-
 rule report:
 	input:
 		"Data/Oefen_RNA-Seq-IDs.txt",

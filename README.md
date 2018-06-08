@@ -63,8 +63,6 @@ The workflow exists of 8 rules. Below an overview of the workflow is shown.
 
 <img src="Data/dag.svg">
 
-The rule open_file opens a text file to retrieve all the locus tags
-
 |Rule|Description|
 |---|---|
 |open_file|opens a text file to retrieve all the locus tags|

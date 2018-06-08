@@ -76,6 +76,5 @@ The rule open_file opens a text file to retrieve all the locus tags
 |uniprot_info|gets Uniprot info of the genes|
 |report|combines gene information in a html report|
 |all|runs all rules|
-|
-|
+
 

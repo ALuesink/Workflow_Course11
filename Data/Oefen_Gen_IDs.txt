@@ -1,0 +1,36 @@
+Locus_tag 	 Databases: IDs 
+lp_0001	{'GOA': ['Q890K8'], 'InterPro': ['IPR001957', 'IPR003593', 'IPR010921', 'IPR013159', 'IPR013317', 'IPR018312', 'IPR020591'], 'UniProtKB/Swiss-Prot': ['Q890K8']}
+lp_0002	{'GOA': ['F9US34'], 'InterPro': ['IPR001001', 'IPR022634', 'IPR022635', 'IPR022637', 'IPR024693'], 'UniProtKB/TrEMBL': ['F9US34']}
+lp_0004	{'GOA': ['F9US35'], 'InterPro': ['IPR002942', 'IPR014330'], 'UniProtKB/TrEMBL': ['F9US35']}
+lp_0005	{'GOA': ['Q890K5'], 'InterPro': ['IPR001238', 'IPR003395', 'IPR018078'], 'UniProtKB/Swiss-Prot': ['Q890K5']}
+lp_0009	{'GOA': ['Q890K2'], 'InterPro': ['IPR000529', 'IPR014717', 'IPR020814'], 'UniProtKB/Swiss-Prot': ['Q890K2']}
+lp_0010	{'GOA': ['Q890K1'], 'InterPro': ['IPR000424', 'IPR011344', 'IPR012340', 'IPR016027'], 'UniProtKB/Swiss-Prot': ['Q890K1']}
+lp_0011	{'GOA': ['Q890K0'], 'InterPro': ['IPR001648', 'IPR018275'], 'UniProtKB/Swiss-Prot': ['Q890K0']}
+lp_0012	{'GOA': ['F9US42'], 'InterPro': ['IPR000160', 'IPR001054', 'IPR001667', 'IPR003156', 'IPR014528'], 'UniProtKB/TrEMBL': ['F9US42']}
+lp_0013	{'GOA': ['Q890J8'], 'InterPro': ['IPR000244', 'IPR009027', 'IPR020069', 'IPR020070', 'IPR020594'], 'UniProtKB/Swiss-Prot': ['Q890J8']}
+lp_0014	{'GOA': ['F9US44'], 'InterPro': ['IPR007692', 'IPR007693', 'IPR007694', 'IPR016136'], 'UniProtKB/TrEMBL': ['F9US44']}
+lp_0015	{'GOA': ['F9US45'], 'InterPro': ['IPR011701', 'IPR016196', 'IPR020846'], 'UniProtKB/TrEMBL': ['F9US45']}
+lp_0016	{'GOA': ['Q890J5'], 'InterPro': ['IPR001048', 'IPR001057', 'IPR005715', 'IPR011529', 'IPR019797'], 'UniProtKB/Swiss-Prot': ['Q890J5']}
+lp_0017	{'GOA': ['Q890J4'], 'InterPro': ['IPR000965', 'IPR012134', 'IPR015590', 'IPR016161', 'IPR016162', 'IPR016163', 'IPR020593'], 'UniProtKB/Swiss-Prot': ['Q890J4']}
+lp_0018	{'GOA': ['F9US48'], 'InterPro': ['IPR000914'], 'UniProtKB/TrEMBL': ['F9US48']}
+lp_0022	{'GOA': ['F9US51'], 'InterPro': ['IPR001451', 'IPR005835', 'IPR011004', 'IPR011832'], 'UniProtKB/TrEMBL': ['F9US51']}
+lp_0026	{'GOA': ['F9US55'], 'InterPro': ['IPR000150', 'IPR006379', 'IPR013200', 'IPR023214'], 'UniProtKB/TrEMBL': ['F9US55']}
+lp_0027	{'GOA': ['F9US56'], 'InterPro': ['IPR005834', 'IPR006402', 'IPR010972', 'IPR010976', 'IPR023214'], 'UniProtKB/TrEMBL': ['F9US56']}
+lp_0036	{'GOA': ['F9US61'], 'InterPro': ['IPR001789', 'IPR001867', 'IPR011006', 'IPR011991'], 'UniProtKB/TrEMBL': ['F9US61']}
+lp_0037	{'GOA': ['F9US62'], 'InterPro': ['IPR000014', 'IPR003594', 'IPR003660', 'IPR003661', 'IPR004358', 'IPR005467', 'IPR009082', 'IPR013767'], 'UniProtKB/TrEMBL': ['F9US62']}
+lp_0038	{'InterPro': ['IPR009996'], 'UniProtKB/TrEMBL': ['F9US63']}
+lp_0039	{'InterPro': ['IPR018604'], 'UniProtKB/TrEMBL': ['F9US64']}
+lp_0041	{'GOA': ['F9US65'], 'InterPro': ['IPR001279'], 'UniProtKB/TrEMBL': ['F9US65']}
+lp_0043	{'GOA': ['F9US66'], 'InterPro': ['IPR001254', 'IPR001478', 'IPR001940', 'IPR009003'], 'UniProtKB/TrEMBL': ['F9US66']}
+lp_0046	{'GOA': ['F9US68'], 'InterPro': ['IPR001647', 'IPR009057', 'IPR015893', 'IPR023773'], 'UniProtKB/TrEMBL': ['F9US68']}
+lp_0047	{'GOA': ['F9US69'], 'InterPro': ['IPR012394', 'IPR015590', 'IPR016160', 'IPR016161', 'IPR016162', 'IPR016163'], 'UniProtKB/TrEMBL': ['F9US69']}
+lp_0048	{'InterPro': ['IPR005122'], 'UniProtKB/TrEMBL': ['F9US70']}
+lp_0050	{'GOA': ['F9US71'], 'InterPro': ['IPR000415'], 'UniProtKB/TrEMBL': ['F9US71']}
+lp_0052	{'GOA': ['F9US72'], 'InterPro': ['IPR007115', 'IPR017543'], 'UniProtKB/TrEMBL': ['F9US72']}
+lp_0053	{'InterPro': ['IPR010841'], 'UniProtKB/TrEMBL': ['F9US73']}
+lp_0057	{'GOA': ['F9US77'], 'InterPro': ['IPR000847', 'IPR005119', 'IPR011991'], 'UniProtKB/TrEMBL': ['F9US77']}
+lp_0058	{'UniProtKB/TrEMBL': ['F9US78']}
+lp_0059	{'GOA': ['F9US79'], 'InterPro': ['IPR014064', 'IPR017867', 'IPR023485'], 'UniProtKB/TrEMBL': ['F9US79']}
+lp_0060	{'GOA': ['F9US80'], 'InterPro': ['IPR002198', 'IPR002347', 'IPR016040'], 'UniProtKB/TrEMBL': ['F9US80']}
+lp_0061	{'GOA': ['F9US81'], 'InterPro': ['IPR010451', 'IPR023375'], 'UniProtKB/TrEMBL': ['F9US81']}
+lp_0062	{'GOA': ['F9US82'], 'InterPro': ['IPR000415'], 'UniProtKB/TrEMBL': ['F9US82']}

@@ -79,7 +79,7 @@ rule report:
 		"report.html"
 	run:
 		from snakemake.utils import report
-		
+
 		def main():
 			# Alle bestanden die zijn gemaakt bij het runnen van de rules.
 			# Deze zijn vervolgens gelezen met de functie read_files
@@ -95,29 +95,23 @@ rule report:
 
 			# In de functie read_files worden *zeven* bestanden gelezen en in lijsten
 			# gezet zodat vervolgens alle belangrijke informatie er eenvoudig uitgehaald kan worden
-
 			RNA_Seq_IDs, PMIDs, Gen_Info, Seq_GC, Gen_IDs_file, Uniprot_info, Uniprot_IDs = read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw, Gen_IDs_file_raw, Uniprot_info_raw, Uniprot_IDs_raw)
 
 			# Alle benodigde informatie over de genen wordt opgehaald en in
 			# lijsten gezet met de onderstaande functies
-			
 			ids_RNA_Seq = get_RNA_Seq_IDs(RNA_Seq_IDs)
 			ids_pm = get_PMIDs(PMIDs)
 			gene_name = get_Gene_Name(Gen_Info)
 			GCper, seq = get_GC_Seq(Seq_GC)
 			uniprot_ids = get_uniprot_ids(Uniprot_IDs)
-			
+
 			# Hieronder wordt een variabele aangemaakt die de inhoud van het
 			# report bevat. Met de functie make_report wordt het report bestand vervolgens gemaakt
-
-			
 			report_data = get_report_data(ids_RNA_Seq, ids_pm, uniprot_ids, gene_name, GCper, seq, visualise_gc)
-
 		 	make_report(report_data, visualise_gc)
 
 
 		def read_files(RNA_Seq_IDs_raw, PMIDs_raw, Gen_Info_raw, Seq_GC_raw, Gen_IDs_file_raw, Uniprot_info_raw, Uniprot_IDs_raw):
-			
 			PMIDs = []
 			with open(PMIDs_raw, "rb") as f:
 				contents = f.readlines()
@@ -221,7 +215,6 @@ rule report:
 			for i in seq_info:
 				y = re.sub("(.{64})", "\\1\n", i[3], 0)
 				seq.append(y+"\n"+"\n"+"------------------------------------------------------")
-				# seq.append(i[3]+"\t"+"------------------------------------------------------")
 				GCper.append(i[1])
 			return GCper, seq
 
@@ -238,17 +231,14 @@ rule report:
 		def get_report_data(ids_RNA_Seq, ids_pm, uniprot_ids, gene_name, GCper, seq, image):
 			report_data = []
 			for i in range(len(uniprot_ids)):
-
-
-				report_line =  "\n" + "**Gene Name:**" + "\t\t" + ids_RNA_Seq[i] + "\n" + "\n" + "**Pubmed ID:**" + "\t\t" + ids_pm[i] + "\n"+ "\n" + "**Gene Description:**" + "\t\t" + gene_name[i] + "\n"+ "\n" + "**GC percentage:**" + "\t" + GCper[i] + "\n"+ "\n" + "**Sequence:**" + "\n" + "\n" + seq[i] + "\n"
+				report_line =  "\n" + "**Gene Name:**" + "\t\t" + ids_RNA_Seq[i] + "\n" + "\n" + "**Pubmed ID:**" + "\t\t" + ids_pm[i] + "\n"+ "\n" + "**Uniprot ID:**" + "\t\t" + uniprot_ids[i] + "\n"+ "\n" + "**Gene Description:**" + "\t\t" + gene_name[i] + "\n"+ "\n" + "**GC percentage:**" + "\t" + GCper[i] + "\n"+ "\n" + "**Sequence:**" + "\n" + "\n" + seq[i] + "\n"
 				report_data.append(report_line)
 			return report_data
-		
+
 
 
 		# Het maken van het report.html bestand. Hierin is alle significante
 		# informatie over de genen te vinden
-
 		def make_report(report_data, visualise_gc):
 			
 			report(
@@ -256,7 +246,7 @@ rule report:
 			===================
 			RNA-seq gene report
 			===================
-			lactobacillus plantarum 
+			lactobacillus plantarum
 			---------------------------------------
 			.. image:: {visualise_gc}
 			{report_data}

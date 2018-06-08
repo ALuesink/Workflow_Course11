@@ -1,18 +1,3 @@
-# Workflow_Course11
-
-Install Miniconda 3
-</br>
-Clone git repository
-</br>
-Create snakemake environment
-</br>
-'$ conda env create --name {name-environment} --file environment.yaml' 
-</br>
-To activate:
-'source activate {name-environment}' 
-To deactivate:
-'source deactivate'
-
 # Snakemake Workflow - Course 11
 
 A Snakemake workflow to get gene and protein information for different locus tags. This workflow produces a html report which displays different gene ID's, the gene description, the GC percentage and the sequence of the different genes.
@@ -69,22 +54,28 @@ $ source deactivate
 
 ## Running the workflow
 
-The workflow exists of 8 rules. Below an overview of the workflow is shown. 
-
-<img src="Data/dag.svg">
-
-### Running the workflow
-
+To run the workflow:
 ```
 $ snakemake report.html
 ```
 
-### And coding style tests
+The workflow exists of 8 rules. Below an overview of the workflow is shown. 
 
-Explain what these tests test and why
+<img src="Data/dag.svg">
 
-```
-Give an example
-```
+The rule open_file opens a text file to retrieve all the locus tags
 
+|Rule|Description|
+|---|---|
+|open_file|opens a text file to retrieve all the locus tags|
+|get_PMIDs|uses Biopython to retrieve PMIDs for the locus tags|
+|gene_info|gets gene info from NCBI
+|seq_gc|gets the sequence and GC percentage of the gene|
+|visualise|visualizes the GC percentage in a barplot|
+|gen_ids|retrieves IDs of different databases of the genes|
+|uniprot_info|gets Uniprot info of the genes|
+|report|combines gene information in a html report|
+|all|runs all rules|
+|
+|
 

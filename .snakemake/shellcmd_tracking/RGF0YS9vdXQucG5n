@@ -1,0 +1,1 @@
+Rscript Scripts/visualise.R Data/Oefen_Seq_GC.txt Data/out.png
